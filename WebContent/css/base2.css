@@ -1,0 +1,22 @@
+@charset "UTF-8";
+.index_article_title_sort a {
+	color: #999;
+	padding-top: 6px;
+	text-align: right;
+	display: block;
+	width: 10%;
+	float: right;
+	font-size: 13px;
+	}
+	
+.index_article_title_sort a:hover {
+	color: #3a76bf;
+	}
+	
+.index_article_title_sort a {
+	width: 15%;
+	}
+
+
+
+

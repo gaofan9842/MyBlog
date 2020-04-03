@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="shortcut icon" href="img//URLpicture.jpg" />
+    <meta http-equiv="Content-Language" content="zh-cn">; 
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312">; 
+   <!--  <meta http-equiv="content-type" content="text/html; charset=utf-8">  -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="renderer" content="webkit" />
+    <title>原创博文</title>
+    <meta name="keywords" content="张三的博客">
+    <meta name="description" content="张三的博客">
+    <link href="css/base.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="js/base.js" type="text/javascript"></script>
+    <script src="js/jquery.slides.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+<div class="head_box">
+   <div class="header">
+        <div class="header_logo">
+            <a href="http://49.233.155.20/MyBlog/index.html"><h2>高燔の博客|</h2><h4>天行健,君子自强不息</h4></a>
+        </div>
+        <div class="header_nav">
+            <ul class="clearfix">
+               <!--   <li><a href="#">转载文章分享</a></li>-->
+                <li><a href="http://49.233.155.20/MyBlog/index.html">首页</a></li>
+                
+                <li class="have_second">
+                    <a href="http://49.233.155.20/MyBlog/trans_list.html">转载文章分享</a>
+                    
+                   <ul class="nav_second">
+                      
+                        <li><a href="http://49.233.155.20/MyBlog/trans_java_list.html">JAVA</a></li>
+                        <li><a href="http://49.233.155.20/MyBlog/trans_blockchain_list.html">区块链技术</a></li>
+                         <li><a href="http://49.233.155.20/MyBlog/trans_computer_list.html">计算机基础知识</a></li>
+                   
+                    </ul>
+                     
+                </li>
+                <li class="have_second">
+                    <a href="http://49.233.155.20/MyBlog/daily_list.html">日常随笔分享</a>
+                    
+                   <ul class="nav_second">
+                        <i></i>
+                        <li><a href="http://49.233.155.20/MyBlog/study_daily_list.html">学习笔记</a></li>
+                        <li><a href="http://49.233.155.20/MyBlog/article_daily_list.html">随笔文章</a></li>
+                        <li><a href="http://49.233.155.20/MyBlog/debug_daily_list.html">debug记录</a></li>
+                       <!--   <li><a href="#">Jquery笔记</a></li>  -->
+                    </ul>
+                     
+                </li>
+                <li><a style="color:#3a76bf; font-size:20px; font-weight: bold;" href="http://49.233.155.20/MyBlog/list.html">原创博文分享</a></li>
+               
+                <li><a href="http://49.233.155.20/MyBlog/about_me.html">关于我</a></li>
+                 <li><a href="http://49.233.155.20/MyBlog/reply.jsp">留言墙</a></li>
+            </ul>
+        </div>
+       
+       <!--  
+        <div class="header_search">
+            <a href="#" class="header_search_btn">
+                <!--<img src="img/search.png">
+                <i></i>
+            </a>
+        </div>
+
+        <div class="header_nav_small_btn">
+            <span class="small_btn"></span>
+        </div>
+--> 
+    </div>
+
+</div>
+
+<div class="nav_hidden_zhanwei"></div>
+
+<div class="search_box">
+    <div class="search">
+    <form name="searchform" class="search_form" method="post" action="[!--news.url--]e/search/index.php" target="_blank">
+        <input type="text" class="search_text" name="keyboard" placeholder="输入关键字点击搜索">
+        <input type="hidden" name="tbname" value="news">
+        <input type="hidden" name="show" value="title">
+        <input type="hidden" name="tempid" value="1">
+        <input type="submit" class="search_btn" value="搜索一下">
+    </form>
+    </div>
+</div>
+
+
+
+
+<div class="article_box clearfix">
+        <div class="left">
+
+        <!--首页最新模板部分-->
+            <div class="list_article_title clearfix">
+                <h3>原创博文</h3>
+                <p>本栏主要分享博主日常的一些原创博文。意在记录学习过程。方便日后翻看。也供大家随时翻阅。内容为博主原创，可自由转载，转载请说明出处。尊重版权，从程序猿做起！
+                为了营造最好的阅读格式，并且使用Markdown写博文很方便，所以原创博文多直接采用Markdown格式。</p>
+            </div>
+
+
+
+
+            <div class="article_box_one">
+
+                <ul class="index_article">
+                   
+                   
+                   <li class="clearfix article_list">
+
+                        <a target="_blank" href="img_myarticle/java/article0_0.png" class="article_list_img">
+                            <img src="img_myarticle/java/article0_0.png">
+                        </a>
+						<a target="_blank" href="http://49.233.155.20/MyBlog/layout_myarticle/java/myarticle0.html">
+                        	<h3>MyBatis 入门知识点</h3>
+                        	<p>MyBatis 本是apache的一个开源项目iBatis, 2010年这个项目由apache software foundation 迁移到了google code，并且改名为MyBatis 。
+MyBatis 是一款优秀的持久层框架，它支持定制化 SQL、存储过程以及高级映射。MyBatis 避免了几乎所有的 JDBC 代码和手动设置参数以及获取结果集。MyBatis 可以使用简单的 XML 或注解来配置和映射原生信息，将接口和 Java 的 POJOs(Plain Ordinary Java Object,普通的 Java对象)映射成数据库中的记录。</p>
+						</a>
+
+
+                        <div class="article_list_link">
+                        <!--  
+                        <span class="article_list_count">
+                            <i class="see_count"></i>
+                            查看次数:500
+                        </span>
+
+                            <span class="article_list_like">
+
+
+                            <i class="like_count"></i>
+                            喜欢次数:500
+
+
+                        </span>
+                        -->
+                          <a target="_blank" href="http://49.233.155.20/MyBlog/layout_myarticle/java/myarticle0.html">查看详细+</a>
+                        </div>
+
+                    </li>
+                    
+                      <li class="clearfix article_list">
+
+                        <a target="_blank" href="img_myarticle/java/article1_0.png" class="article_list_img">
+                            <img src="img_myarticle/java/article1_0.png">
+                        </a>
+						<a target="_blank" href="http://49.233.155.20/MyBlog/layout_myarticle/java/myarticle1.html">
+                        	<h3>《深入理解Java虚拟机》学习笔记（一） Java内存区域 与 Java内存溢出异常</h3>
+                        	<p>
+JVM在执行Java程序时，会将内存划分为若干个不同的数据区域。根据《Java虚拟机规范》的规定，Java虚拟机所管理的内存 将会包括五个运行时数据区域：程序计数器、方法区、本地方法栈、虚拟机栈和 堆区。
+其中堆区 和 方法区是所有线程共享的数据区；虚拟机栈、程序计数器 和 本地方法栈为线程隔离的数据区。
+</p>
+						</a>
+
+
+                        <div class="article_list_link">
+                        <!--  
+                        <span class="article_list_count">
+                            <i class="see_count"></i>
+                            查看次数:500
+                        </span>
+
+                            <span class="article_list_like">
+
+
+                            <i class="like_count"></i>
+                            喜欢次数:500
+
+
+                        </span>
+                        -->
+                          <a target="_blank" href="http://49.233.155.20/MyBlog/layout_myarticle/java/myarticle1.html">查看详细+</a>
+                        </div>
+
+                    </li>
+                    
+                    
+                    <li class="clearfix article_list">
+
+                        <a href="#" class="article_list_img">
+                            <img src="img/article1.png">
+                        </a>
+ <h3>暂无</h3>
+                        <p>lalallallaalallallala</p>
+
+
+
+                        <div class="article_list_link">
+                        <!--  
+                            <span class="article_list_count">
+                                <i class="see_count"></i>
+                                查看次数:500
+                            </span>
+
+                            <span class="article_list_like">
+
+
+                                <i class="like_count"></i>
+                                喜欢次数:500
+
+
+                            </span>
+                            -->
+                            <a href="#">查看详细+</a>
+                        </div>
+
+                    </li>
+                    <li class="clearfix article_list">
+
+                        <a href="#" class="article_list_img">
+                            <img src="img/article1.png">
+                        </a>
+
+                         <h3>暂无</h3>
+                        <p>lalallallaalallallala</p>
+
+
+
+                        <div class="article_list_link">
+                        <!--  
+                            <span class="article_list_count">
+                                <i class="see_count"></i>
+                                查看次数:500
+                            </span>
+
+                            <span class="article_list_like">
+
+
+                                <i class="like_count"></i>
+                                喜欢次数:500
+
+
+                            </span>
+                            -->
+                            <a href="#">查看详细+</a>
+                        </div>
+
+                    </li>
+                    <li class="clearfix article_list">
+
+                        <a href="#" class="article_list_img">
+                            <img src="img/article1.png">
+                        </a>
+
+                        <h3>暂无</h3>
+                        <p>lalallallaalallallala</p>
+
+
+                        <div class="article_list_link">
+                        <!--  
+                            <span class="article_list_count">
+                                <i class="see_count"></i>
+                                查看次数:500
+                            </span>
+
+                            <span class="article_list_like">
+
+
+                                <i class="like_count"></i>
+                                喜欢次数:500
+
+
+                            </span>
+                            -->
+                            <a href="#">查看详细+</a>
+                        </div>
+
+                    </li>
+                    <li class="clearfix article_list">
+
+                        <a href="#" class="article_list_img">
+                            <img src="img/article1.png">
+                        </a>
+
+                        <h3>暂无</h3>
+                        <p>lalallallaalallallala</p>
+
+
+                        <div class="article_list_link">
+                        <!-- 
+                            <span class="article_list_count">
+                                <i class="see_count"></i>
+                                查看次数:500
+                            </span>
+
+                            <span class="article_list_like">
+
+
+                                <i class="like_count"></i>
+                                喜欢次数:500
+
+
+                            </span>
+                             -->
+                            <a href="#">查看详细+</a>
+                        </div>
+
+                    </li>
+                    <li class="clearfix article_list">
+
+                        <a href="#" class="article_list_img">
+                            <img src="img/article1.png">
+                        </a>
+
+                         <h3>暂无</h3>
+                        <p>lalallallaalallallala</p>
+
+
+
+                        <div class="article_list_link">
+                        <!--  
+                            <span class="article_list_count">
+                                <i class="see_count"></i>
+                                查看次数:500
+                            </span>
+
+                            <span class="article_list_like">
+
+
+                                <i class="like_count"></i>
+                                喜欢次数:500
+
+
+                            </span>  -->
+                            <a href="#">查看详细+</a>
+                        </div>
+
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                          <li class="clearfix article_list">
+
+                        <a href="#" class="article_list_img">
+                            <img src="img/article1.png">
+                        </a>
+
+                        <h3>暂无</h3>
+                        <p>lalallallaalallallala</p>
+
+
+                        <div class="article_list_link">
+                        <!-- 
+                            <span class="article_list_count">
+                                <i class="see_count"></i>
+                                查看次数:500
+                            </span>
+
+                            <span class="article_list_like">
+
+
+                                <i class="like_count"></i>
+                                喜欢次数:500
+
+
+                            </span> -->
+                            <a href="#">查看详细+</a>
+                        </div>
+
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+
+            </div>
+
+
+
+            <div class="pagelist">
+                    <a href="#">首页</a>
+                    <a href="#">上一页</a>
+                    <a href="#" class="pagelist_active">1</a>
+                   <!--   <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>-->
+                    <a href="#">下一页</a>
+                    <a href="#">尾页</a>
+            </div>
+
+        </div>
+
+
+
+        <div class="right">
+        
+        <!--文章页关于我-->
+            <div class="right_box about_me_info">
+                <div class="about_me_info_touxiang">
+                    <i class="about_me_line"></i>
+                   <a  target="_blank" href="img//self.png" >
+                       <img src="img//self.png">
+                 	</a>
+                </div>
+                <div>
+                    <div class="about_me_text">
+                       <h3>琢也不成器</h3>
+                    <div>
+                        <p>一个好汉三个帮，程序猿同样如此。</p>
+                        <p>愿我历尽千帆，归来仍是少年。</p>
+                     
+                    </div>
+                       
+                    </div>
+                </div>
+            </div>
+
+<!--本栏推荐-->
+            <div class="right_box tuijian_moban">
+               <h3>博文推荐</h3>
+                <div>
+                    <ul>
+                       <li> <a href="http://49.233.155.20/MyBlog/layout_trans/java/trans_java_article_0.html">【Java简介】</a></li>
+                        <li><a>【暂无】</a></li>
+                        <li><a>【暂无】</a></li>
+                        <li><a>【暂无】</a></li>
+                        <li><a>【暂无】</a></li>
+                        <li><a>【暂无】</a></li>
+                    </ul>
+                </div>
+            </div>
+<!--点击排行
+            <div class="right_box tuijian_moban">
+                <h3>点击排行</h3>
+                <div>
+                    <ul>
+                        <li><a href="#">最新模板-律所类模板</a></li>
+                        <li><a href="#">最新模板-律所类模板</a></li>
+                        <li><a href="#">最新模板-律所类模板</a></li>
+                        <li><a href="#">最新模板-律所类模板</a></li>
+                        <li><a href="#">最新模板-律所类模板</a></li>
+                        <li><a href="#">最新模板-律所类模板</a></li>
+                    </ul>
+                </div>
+            </div>
+   -->
+   
+<!--友情链接-->
+            <div class="right_box youlian_list">
+                <h3>大牛博主链接</h3>
+                <div>
+                    <ul>
+                       <li><a href="https://www.liaoxuefeng.com/">【廖雪峰的官方网站】</a></li>
+                        <li><a href="http://www.ruanyifeng.com/blog/">【阮一峰的网络日志】</a></li>
+                        <li><a href="#">【暂无】</a></li>
+                        <li><a href="#">【暂无】</a></li>
+                        <li><a href="#">【暂无】</a></li>
+                        <li><a href="#">【暂无】</a></li>
+                    </ul>
+                </div>
+            </div>
+
+<!--微信二维码部分-->
+              <div class="self_erweima right_box">
+                <h3>微信二维码</h3>
+                <div>
+                    <a  target="_blank" href="img//self_weixin_erweima.png" >
+                       <img src="img//self_weixin_erweima.png">
+                 	</a>
+                    
+                  
+                </div>
+            </div>
+
+<!--qq二维码部分-->
+            <div class="self_erweima right_box">
+                <h3>QQ二维码</h3>
+                <div>
+                    <a  target="_blank" href="img//self_qq_erweima.png" >
+                      <img src="img//self_qq_erweima.png">
+                 	</a>
+                    
+                    
+                </div>
+            </div>
+
+<!--知乎部分-->
+            <div class="self_erweima right_box">
+                <h3>知乎二维码</h3>
+                <div>
+                    <a  target="_blank" href="img//self_zhihu_erweima.png" >
+                       <img src="img//self_zhihu_erweima.png">
+                 	</a>
+                   
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+</div>
+
+
+
+<div class="footer_box">
+    <div class="footer clearfix">
+         <div class="footer_img">
+             <ul>
+            <li>
+                <a  target="_blank" href="img//self_qq_erweima.png" >
+                      <img src="img//self_qq_erweima.png">
+                </a>
+                <span>我的qq</span>
+            </li>
+            <li>
+               <a  target="_blank" href="img//self_weixin_erweima.png" >
+                       <img src="img//self_weixin_erweima.png">
+                 	</a>
+                    
+                <span>我的微信</span>
+            </li>
+             <li>
+                 <a  target="_blank" href="img//self_zhihu_erweima.png" >
+                       <img src="img//self_zhihu_erweima.png">
+                 	</a>
+                <span>我的知乎</span>
+            </li>
+        </ul>
+        </div>
+        <div class="footer_text">
+              <p><i>站点声明：</i></p>
+            <p>1、本站创建的目的以学习交流为基础，记录日常生活中遇到的点点滴滴。</p>
+            <p>2、本站中所有分享、转载的文章只供个人学习研究使用，未经允许不得用于任何商业目的。</p>
+            <p>3、本站所有原创文章均可转载，请注明出处，欢迎大家看到喜欢的文章帮忙转发。举报意见邮箱：347113619@qq.com</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+
+</html>

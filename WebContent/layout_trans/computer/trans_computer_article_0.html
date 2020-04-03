@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="shortcut icon" href="../../img/URLpicture.jpg" />
+     <meta http-equiv="Content-Language" content="zh-cn">; 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">; 
+   <!--  <meta http-equiv="content-type" content="text/html; charset=utf-8">  -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="renderer" content="webkit" />
+    <title>字符编码笔记：ASCII，Unicode 和 UTF-8（转载）</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+      <link href="../../css/base2.css" rel="stylesheet" type="text/css">
+    <link href="../../css/base.css" rel="stylesheet" type="text/css">
+    <script src="../../js/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="../../js/base.js" type="text/javascript"></script>
+    <script src="../../js/jquery.slides.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+<div class="head_box">
+   <div class="header">
+        <div class="header_logo">
+            <a href="http://49.233.155.20/MyBlog/index.html"><h2>高燔の博客|</h2><h4>天行健,君子自强不息</h4></a>
+        </div>
+        <div class="header_nav">
+            <ul class="clearfix">
+               <!--   <li><a href="#">转载文章分享</a></li>-->
+                <li><a href="http://49.233.155.20/MyBlog/index.html">首页</a>
+               
+                <li class="have_second">
+                    <a style="color:#3a76bf; font-size:20px; font-weight: bold;" href="http://49.233.155.20/MyBlog/trans_list.html">转载文章分享</a>
+                    
+                   <ul class="nav_second">
+                      
+                        <li><a href="http://49.233.155.20/MyBlog/trans_java_list.html">JAVA</a></li>
+                        <li><a href="http://49.233.155.20/MyBlog/trans_blockchain_list.html">区块链技术</a></li>
+                           <li><a href="http://49.233.155.20/MyBlog/trans_computer_list.html">计算机基础知识</a></li>
+                   
+                    </ul>
+                     
+                </li>
+                <li class="have_second">
+                    <a href="http://49.233.155.20/MyBlog/daily_list.html">日常随笔分享</a>
+                    
+                   <ul class="nav_second">
+                        <i></i>
+                        <li><a href="http://49.233.155.20/MyBlog/study_daily_list.html">学习笔记</a></li>
+                        <li><a href="http://49.233.155.20/MyBlog/article_daily_list.html">随笔文章</a></li>
+                        <li><a href="http://49.233.155.20/MyBlog/debug_daily_list.html">debug记录</a></li>
+                       <!--   <li><a href="#">Jquery笔记</a></li>  -->
+                    </ul>
+                     
+                </li>
+                <li><a href="http://49.233.155.20/MyBlog/list.html">原创博文分享</a></li>
+                <li><a href="http://49.233.155.20/MyBlog/about_me.html">关于我</a></li>
+                 <li><a href="http://49.233.155.20/MyBlog/reply.jsp">留言墙</a></li>
+            </ul>
+        </div>
+       
+       <!--  
+        <div class="header_search">
+            <a href="#" class="header_search_btn">
+                <!--<img src="img/search.png">
+                <i></i>
+            </a>
+        </div>
+
+        <div class="header_nav_small_btn">
+            <span class="small_btn"></span>
+        </div>
+--> 
+    </div>
+
+</div>
+
+<div class="nav_hidden_zhanwei"></div>
+
+<div class="search_box">
+    <div class="search">
+    <form name="searchform" class="search_form" method="post" action="[!--news.url--]e/search/index.php" target="_blank">
+        <input type="text" class="search_text" name="keyboard" placeholder="输入关键字点击搜索">
+        <input type="hidden" name="tbname" value="news">
+        <input type="hidden" name="show" value="title">
+        <input type="hidden" name="tempid" value="1">
+        <input type="submit" class="search_btn" value="搜索一下">
+    </form>
+    </div>
+</div>
+
+
+
+
+<div class="article_box clearfix">
+
+
+
+        <div class="left">
+
+
+
+            <div class="article_content_box clearfix">
+
+                <div class="article_article_title">
+                    <h3>计算机基础
+                        <span>您当前的位置：<a href="http://49.233.155.20/MyBlog/index.html">首页></a> <a href="http://49.233.155.20/MyBlog/trans_list.html">转载文章分享></a><a href="http://49.233.155.20/MyBlog/trans_computer_list.html">计算机基础></a><a href="#">字符编码笔记：ASCII，Unicode 和 UTF-8</a></span>
+                    </h3>
+                </div>
+
+
+  				<div class="article_article_title">
+		                <h3>
+		                 <span> <a href="#">下一篇：暂无</a> </span>
+		                    <span> <a href="#">上一篇：暂无 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </a></span>
+		                 </h3>
+                 
+ 				   </div>
+
+
+                <h3 class="article_content_title">字符编码：ASCII，Unicode 和 UTF-8<a target="_blank" href="http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html">【点此查看原博】</a></h3>
+                <div class="article_author_count_box clearfix">
+                    <i class="article_author_img" title="阮一峰的网络日志"><img src="../../img_trans/author//ruanYiFeng.png"></i><p>原博主：</p><a target="_blank" class="article_author" href="http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html">阮一峰的网络日志</a>
+                    <p>转载时间：2019-11-01</p>
+                </div>
+                
+                
+                <div class="article_info">
+                    <p>
+                    	<b>转载说明&nbsp;&nbsp;</b>
+                    	本文转载自<a target="_blank" href="http://www.ruanyifeng.com/blog/">【阮一峰的网络日志】</a>，如需转载，请附原博客地址并移步原博进行交流转载。 </p>
+                   	<p>原博地址：<a target="_blank" href="http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html">http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html</a>  </p>
+                  
+                </div>
+                
+                
+                <div class="article_content">
+                
+ <!-- div class="asset-body" -->
+                                        <p>今天中午，我突然想搞清楚 Unicode 和 UTF-8 之间的关系，就开始查资料。</p>
+
+                                    <!-- /div -->
+
+
+                                    <!-- div id="more" class="asset-more" -->
+                                        <p>这个问题比我想象的复杂，午饭后一直看到晚上9点，才算初步搞清楚。</p>
+
+<p>下面就是我的笔记，主要用来整理自己的思路。我尽量写得通俗易懂，希望能对其他朋友有用。毕竟，字符编码是计算机技术的基石，想要熟练使用计算机，就必须懂得一点字符编码的知识。</p>
+
+<br/><h2><strong>一、ASCII 码</strong></h2><br/>
+
+<p>我们知道，计算机内部，所有信息最终都是一个二进制值。每一个二进制位（bit）有<code>0</code>和<code>1</code>两种状态，因此八个二进制位就可以组合出256种状态，这被称为一个字节（byte）。也就是说，一个字节一共可以用来表示256种不同的状态，每一个状态对应一个符号，就是256个符号，从<code>00000000</code>到<code>11111111</code>。</p>
+
+<p>上个世纪60年代，美国制定了一套字符编码，对英语字符与二进制位之间的关系，做了统一规定。这被称为 ASCII 码，一直沿用至今。</p>
+
+<p>ASCII 码一共规定了128个字符的编码，比如空格<code>SPACE</code>是32（二进制<code>00100000</code>），大写的字母<code>A</code>是65（二进制<code>01000001</code>）。这128个符号（包括32个不能打印出来的控制符号），只占用了一个字节的后面7位，最前面的一位统一规定为<code>0</code>。</p>
+
+<br/><h2><strong>二、非 ASCII 编码</strong></h2><br/>
+
+<p>英语用128个符号编码就够了，但是用来表示其他语言，128个符号是不够的。比如，在法语中，字母上方有注音符号，它就无法用 ASCII 码表示。于是，一些欧洲国家就决定，利用字节中闲置的最高位编入新的符号。比如，法语中的<code>é</code>的编码为130（二进制<code>10000010</code>）。这样一来，这些欧洲国家使用的编码体系，可以表示最多256个符号。</p>
+
+<p>但是，这里又出现了新的问题。不同的国家有不同的字母，因此，哪怕它们都使用256个符号的编码方式，代表的字母却不一样。比如，130在法语编码中代表了<code>é</code>，在希伯来语编码中却代表了字母<code>Gimel</code> (<code>ג</code>)，在俄语编码中又会代表另一个符号。但是不管怎样，所有这些编码方式中，0--127表示的符号是一样的，不一样的只是128--255的这一段。</p>
+
+<p>至于亚洲国家的文字，使用的符号就更多了，汉字就多达10万左右。一个字节只能表示256种符号，肯定是不够的，就必须使用多个字节表达一个符号。比如，简体中文常见的编码方式是 GB2312，使用两个字节表示一个汉字，所以理论上最多可以表示 256 x 256 = 65536 个符号。</p>
+
+<p>中文编码的问题需要专文讨论，这篇笔记不涉及。这里只指出，虽然都是用多个字节表示一个符号，但是GB类的汉字编码与后文的 Unicode 和 UTF-8 是毫无关系的。</p>
+
+<br/><h2><strong>三. Unicode</strong></h2><br/>
+
+<p>正如上一节所说，世界上存在着多种编码方式，同一个二进制数字可以被解释成不同的符号。因此，要想打开一个文本文件，就必须知道它的编码方式，否则用错误的编码方式解读，就会出现乱码。为什么电子邮件常常出现乱码？就是因为发信人和收信人使用的编码方式不一样。</p>
+
+<p>可以想象，如果有一种编码，将世界上所有的符号都纳入其中。每一个符号都给予一个独一无二的编码，那么乱码问题就会消失。这就是 Unicode，就像它的名字都表示的，这是一种所有符号的编码。</p>
+
+<p>Unicode 当然是一个很大的集合，现在的规模可以容纳100多万个符号。每个符号的编码都不一样，比如，<code>U+0639</code>表示阿拉伯字母<code>Ain</code>，<code>U+0041</code>表示英语的大写字母<code>A</code>，<code>U+4E25</code>表示汉字<code>严</code>。具体的符号对应表，可以查询<a href="http://www.unicode.org" target="_blank">unicode.org</a>，或者专门的<a href="http://www.chi2ko.com/tool/CJK.htm" target="_blank">汉字对应表</a>。 </p>
+
+<br/><h2><strong>四、Unicode 的问题</strong></h2><br/>
+
+<p>需要注意的是，Unicode 只是一个符号集，它只规定了符号的二进制代码，却没有规定这个二进制代码应该如何存储。</p>
+
+<p>比如，汉字<code>严</code>的 Unicode 是十六进制数<code>4E25</code>，转换成二进制数足足有15位（<code>100111000100101</code>），也就是说，这个符号的表示至少需要2个字节。表示其他更大的符号，可能需要3个字节或者4个字节，甚至更多。</p>
+
+<p>这里就有两个严重的问题，第一个问题是，如何才能区别 Unicode 和 ASCII ？计算机怎么知道三个字节表示一个符号，而不是分别表示三个符号呢？第二个问题是，我们已经知道，英文字母只用一个字节表示就够了，如果 Unicode 统一规定，每个符号用三个或四个字节表示，那么每个英文字母前都必然有二到三个字节是<code>0</code>，这对于存储来说是极大的浪费，文本文件的大小会因此大出二三倍，这是无法接受的。</p>
+
+<p>它们造成的结果是：1）出现了 Unicode 的多种存储方式，也就是说有许多种不同的二进制格式，可以用来表示 Unicode。2）Unicode 在很长一段时间内无法推广，直到互联网的出现。</p>
+
+<br/><h2><strong>五、UTF-8</strong></h2><br/>
+
+<p>互联网的普及，强烈要求出现一种统一的编码方式。UTF-8 就是在互联网上使用最广的一种 Unicode 的实现方式。其他实现方式还包括 UTF-16（字符用两个字节或四个字节表示）和 UTF-32（字符用四个字节表示），不过在互联网上基本不用。<strong>重复一遍，这里的关系是，UTF-8 是 Unicode 的实现方式之一。</strong></p>
+
+<p>UTF-8 最大的一个特点，就是它是一种变长的编码方式。它可以使用1~4个字节表示一个符号，根据不同的符号而变化字节长度。</p>
+
+<p>UTF-8 的编码规则很简单，只有二条：</p>
+
+<p>1）对于单字节的符号，字节的第一位设为<code>0</code>，后面7位为这个符号的 Unicode 码。因此对于英语字母，UTF-8 编码和 ASCII 码是相同的。</p>
+
+<p>2）对于<code>n</code>字节的符号（<code>n &gt; 1</code>），第一个字节的前<code>n</code>位都设为<code>1</code>，第<code>n + 1</code>位设为<code>0</code>，后面字节的前两位一律设为<code>10</code>。剩下的没有提及的二进制位，全部为这个符号的 Unicode 码。</p>
+
+<p>下表总结了编码规则，字母<code>x</code>表示可用编码的位。</p>
+<br/>
+<blockquote><div><pre>
+Unicode符号范围     |        UTF-8编码方式
+（十六进制）        |        （二进制）
+------------------- +---------------------------------------------
+0000 0000-0000 007F | 0xxxxxxx
+0000 0080-0000 07FF | 110xxxxx 10xxxxxx
+0000 0800-0000 FFFF | 1110xxxx 10xxxxxx 10xxxxxx
+0001 0000-0010 FFFF | 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx
+</pre></div></blockquote>
+<br/>
+<p>跟据上表，解读 UTF-8 编码非常简单。如果一个字节的第一位是<code>0</code>，则这个字节单独就是一个字符；如果第一位是<code>1</code>，则连续有多少个<code>1</code>，就表示当前字符占用多少个字节。</p>
+
+<p>下面，还是以汉字<code>严</code>为例，演示如何实现 UTF-8 编码。</p>
+
+<p><code>严</code>的 Unicode 是<code>4E25</code>（<code>100111000100101</code>），根据上表，可以发现<code>4E25</code>处在第三行的范围内（<code>0000 0800 - 0000 FFFF</code>），因此<code>严</code>的 UTF-8 编码需要三个字节，即格式是<code>1110xxxx 10xxxxxx 10xxxxxx</code>。然后，从<code>严</code>的最后一个二进制位开始，依次从后向前填入格式中的<code>x</code>，多出的位补<code>0</code>。这样就得到了，<code>严</code>的 UTF-8 编码是<code>11100100 10111000 10100101</code>，转换成十六进制就是<code>E4B8A5</code>。</p>
+
+<br/><h2><strong>六、Unicode 与 UTF-8 之间的转换</strong></h2><br/>
+
+<p>通过上一节的例子，可以看到<code>严</code>的 Unicode码 是<code>4E25</code>，UTF-8 编码是<code>E4B8A5</code>，两者是不一样的。它们之间的转换可以通过程序实现。</p>
+
+<p>Windows平台，有一个最简单的转化方法，就是使用内置的记事本小程序<code>notepad.exe</code>。打开文件后，点击<code>文件</code>菜单中的<code>另存为</code>命令，会跳出一个对话框，在最底部有一个<code>编码</code>的下拉条。</p>
+
+<br/><p><a target="_blank" href="http://49.233.155.20/MyBlog/img_trans/article_computer/article_0_0.jpg"><img alt="bg2007102801.jpg" src="http://www.ruanyifeng.com/blog/2007/10/bg2007102801-thumb.jpg" width="500" height="227" /></a></p>
+
+<br/><p>里面有四个选项：<code>ANSI</code>，<code>Unicode</code>，<code>Unicode big endian</code>和<code>UTF-8</code>。</p>
+
+<p>1）<code>ANSI</code>是默认的编码方式。对于英文文件是<code>ASCII</code>编码，对于简体中文文件是<code>GB2312</code>编码（只针对 Windows 简体中文版，如果是繁体中文版会采用 Big5 码）。</p>
+
+<p>2）<code>Unicode</code>编码这里指的是<code>notepad.exe</code>使用的 UCS-2 编码方式，即直接用两个字节存入字符的 Unicode 码，这个选项用的 little endian 格式。</p>
+
+<p>3）<code>Unicode big endian</code>编码与上一个选项相对应。我在下一节会解释 little endian 和 big endian 的涵义。</p>
+
+<p>4）<code>UTF-8</code>编码，也就是上一节谈到的编码方法。</p>
+
+<p>选择完"编码方式"后，点击"保存"按钮，文件的编码方式就立刻转换好了。</p>
+
+<br/><h2><strong>七、Little endian 和 Big endian</strong></h2><br/>
+
+<p>上一节已经提到，UCS-2 格式可以存储 Unicode 码（码点不超过<code>0xFFFF</code>）。以汉字<code>严</code>为例，Unicode 码是<code>4E25</code>，需要用两个字节存储，一个字节是<code>4E</code>，另一个字节是<code>25</code>。存储的时候，<code>4E</code>在前，<code>25</code>在后，这就是 Big endian 方式；<code>25</code>在前，<code>4E</code>在后，这是 Little endian 方式。</p>
+
+<p>这两个古怪的名称来自英国作家斯威夫特的《格列佛游记》。在该书中，小人国里爆发了内战，战争起因是人们争论，吃鸡蛋时究竟是从大头(Big-endian)敲开还是从小头(Little-endian)敲开。为了这件事情，前后爆发了六次战争，一个皇帝送了命，另一个皇帝丢了王位。</p>
+
+<p>第一个字节在前，就是"大头方式"（Big endian），第二个字节在前就是"小头方式"（Little endian）。</p>
+
+<p>那么很自然的，就会出现一个问题：计算机怎么知道某一个文件到底采用哪一种方式编码？</p>
+
+<p>Unicode 规范定义，每一个文件的最前面分别加入一个表示编码顺序的字符，这个字符的名字叫做"零宽度非换行空格"（zero width no-break space），用<code>FEFF</code>表示。这正好是两个字节，而且<code>FF</code>比<code>FE</code>大<code>1</code>。</p>
+
+<p>如果一个文本文件的头两个字节是<code>FE FF</code>，就表示该文件采用大头方式；如果头两个字节是<code>FF FE</code>，就表示该文件采用小头方式。</p>
+
+<br/><h2><strong>八、实例</strong></h2><br/>
+
+<p>下面，举一个实例。</p>
+
+<p>打开"记事本"程序<code>notepad.exe</code>，新建一个文本文件，内容就是一个<code>严</code>字，依次采用<code>ANSI</code>，<code>Unicode</code>，<code>Unicode big endian</code>和<code>UTF-8</code>编码方式保存。</p>
+
+<p>然后，用文本编辑软件<a href="http://www.google.cn/search?aq=t&amp;oq=UltraEdit&amp;complete=1&amp;hl=zh-CN&amp;newwindow=1&amp;rlz=1B3GGGL_zh-CNCN216CN216&amp;q=ultraedit+%E4%B8%8B%E8%BD%BD&amp;btnG=Google+%E6%90%9C%E7%B4%A2&amp;meta=" target="_blank">UltraEdit 中</a>的"十六进制功能"，观察该文件的内部编码方式。</p>
+
+<p>1）ANSI：文件的编码就是两个字节<code>D1 CF</code>，这正是<code>严</code>的 GB2312 编码，这也暗示 GB2312 是采用大头方式存储的。</p>
+
+<p>2）Unicode：编码是四个字节<code>FF FE 25 4E</code>，其中<code>FF FE</code>表明是小头方式存储，真正的编码是<code>4E25</code>。</p>
+
+<p>3）Unicode big endian：编码是四个字节<code>FE FF 4E 25</code>，其中<code>FE FF</code>表明是大头方式存储。</p>
+
+<p>4）UTF-8：编码是六个字节<code>EF BB BF E4 B8 A5</code>，前三个字节<code>EF BB BF</code>表示这是UTF-8编码，后三个<code>E4B8A5</code>就是<code>严</code>的具体编码，它的存储顺序与编码顺序是一致的。</p>
+
+<br/><h2><strong>九、延伸阅读</strong></h2><br/>
+
+<ul>
+<li><a href="http://www.joelonsoftware.com/articles/Unicode.html" target="_blank">【The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets】</a>（关于字符集的最基本知识）</li>
+<li><a href="http://www.pconline.com.cn/pcedu/empolder/gj/other/0505/616631.html" target="_blank">【谈谈Unicode编码】</a></li>
+<li><a href="http://www.ietf.org/rfc/rfc3629.txt" target="_blank">【RFC3629：UTF-8, a transformation format of ISO 10646】</a></li>
+</ul>
+
+<p>（完）</p>
+                    
+                </div>
+
+
+
+<!-- 
+                <div class="article_like_box">
+                    <a href="#">喜欢的话点个赞吧！</a>
+                </div>
+
+ -->
+                <div class="article_prev_next_box">
+                   
+                    <a href="#">上一篇：暂无</a>
+                     <a >下一篇：暂无</a>
+                </div>
+            </div>
+
+            <div class="article_like_article">
+                <div class="article_article_title">
+                    <h3>相关文章</h3>
+                </div>
+                <div class="article_like_list">
+                <a >暂无</a>
+                <a >暂无</a>
+                <a >暂无</a>
+                <a >暂无</a>
+                <a >暂无</a>
+                <a >暂无</a>
+                </div>
+            </div>
+
+<!-- 
+            <div class="pinglun_box">
+                <div class="article_article_title">
+                    <h3>文章评论</h3>
+                </div>
+            </div>
+ -->
+        </div>
+
+
+
+
+
+        <div  class="right">
+        
+        
+        
+        
+        
+   
+
+            <div class="right_box about_me_info">
+                <div class="about_me_info_touxiang">
+                    <i class="about_me_line"></i>
+                    <a  target="_blank" href="../../img//self.png" >
+                       <img src="../../img//self.png">
+                 	</a>
+                </div>
+                <div>
+                    <div class="about_me_text">
+                       <h3>琢也不成器</h3>
+                    <div>
+                        <p>一个好汉三个帮，程序猿同样如此。</p>
+                        <p>愿我历尽千帆，归来仍是少年。</p>
+                     
+                    </div>
+                       
+                    </div>
+                </div>
+            </div>
+<!--本栏推荐-->
+            <div class="right_box tuijian_moban">
+                <h3>博文推荐</h3>
+                <div>
+                    <ul>
+                       <li> <a href="http://49.233.155.20/MyBlog/layout_trans/java/trans_java_article_0.html">【Java简介】</a></li>
+                        <li><a>【暂无】</a></li>
+                        <li><a>【暂无】</a></li>
+                        <li><a>【暂无】</a></li>
+                        <li><a>【暂无】</a></li>
+                        <li><a>【暂无】</a></li>
+                    </ul>
+                </div>
+            </div>
+<!--点击排行
+            <div class="right_box tuijian_moban">
+                <h3>点击排行</h3>
+                <div>
+                    <ul>
+                        <li><a href="#">最新模板-律所类模板</a></li>
+                        <li><a href="#">最新模板-律所类模板</a></li>
+                        <li><a href="#">最新模板-律所类模板</a></li>
+                        <li><a href="#">最新模板-律所类模板</a></li>
+                        <li><a href="#">最新模板-律所类模板</a></li>
+                        <li><a href="#">最新模板-律所类模板</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            
+            -->
+<!--友情链接-->
+            <div class="right_box youlian_list">
+                <h3>大牛博主链接</h3>
+                <div>
+                    <ul>
+                       <li><a href="https://www.liaoxuefeng.com/">【廖雪峰的官方网站】</a></li>
+                        <li><a href="http://www.ruanyifeng.com/blog/">【阮一峰的网络日志】</a></li>
+                        <li><a href="#">【暂无】</a></li>
+                        <li><a href="#">【暂无】</a></li>
+                        <li><a href="#">【暂无】</a></li>
+                        <li><a href="#">【暂无】</a></li>
+                    </ul>
+                </div>
+            </div>
+
+<!--微信二维码部分-->
+              <div class="self_erweima right_box">
+                <h3>微信二维码</h3>
+                <div>
+                    <a  target="_blank" href="../../img//self_weixin_erweima.png" >
+                       <img src="../../img//self_weixin_erweima.png">
+                 	</a>
+                    
+                  
+                </div>
+            </div>
+
+<!--qq二维码部分-->
+            <div class="self_erweima right_box">
+                <h3>QQ二维码</h3>
+                <div>
+                    <a  target="_blank" href="../../img//self_qq_erweima.png" >
+                      <img src="../../img//self_qq_erweima.png">
+                 	</a>
+                    
+                    
+                </div>
+            </div>
+
+<!--知乎部分-->
+            <div class="self_erweima right_box">
+                <h3>知乎二维码</h3>
+                <div>
+                    <a  target="_blank" href="../../img//self_zhihu_erweima.png" >
+                       <img src="../../img//self_zhihu_erweima.png">
+                 	</a>
+                   
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<div class="footer_box">
+    <div class="footer clearfix">
+         <div class="footer_img">
+             <ul>
+            <li>
+                <a  target="_blank" href="../../img//self_qq_erweima.png" >
+                      <img src="../../img//self_qq_erweima.png">
+                </a>
+                <span>我的qq</span>
+            </li>
+            <li>
+               <a  target="_blank" href="../../img//self_weixin_erweima.png" >
+                       <img src="../../img//self_weixin_erweima.png">
+                 	</a>
+                    
+                <span>我的微信</span>
+            </li>
+             <li>
+                 <a  target="_blank" href="../../img//self_zhihu_erweima.png" >
+                       <img src="../../img//self_zhihu_erweima.png">
+                 	</a>
+                <span>我的知乎</span>
+            </li>
+        </ul>
+        </div>
+        <div class="footer_text">
+             <p><i>站点声明：</i></p>
+            <p>1、本站创建的目的以学习交流为基础，记录日常生活中遇到的点点滴滴。</p>
+            <p>2、本站中所有分享、转载的文章只供个人学习研究使用，未经允许不得用于任何商业目的。</p>
+            <p>3、本站所有原创文章均可转载，请注明出处，欢迎大家看到喜欢的文章帮忙转发。举报意见邮箱：347113619@qq.com</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+
+</html>
